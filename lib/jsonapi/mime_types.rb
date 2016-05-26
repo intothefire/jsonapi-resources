@@ -4,10 +4,7 @@ module JSONAPI
   module MimeTypes
     def self.install
       Mime::Type.register JSONAPI::MEDIA_TYPE, :api_json
-
-
-      raise Rails::VERSION::MAJOR.to_s
-
+      
       # :nocov:
       if Rails::VERSION::MAJOR >= 5
         parsers = ActionDispatch::Request.parameter_parsers.merge(
